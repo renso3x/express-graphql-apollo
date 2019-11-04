@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "address": "Manila, Philippines",
+    "phone": "0921-59331122",
+    "email": "john.doe3@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "address": "Manila, Philippines",
+    "phone": "0921-0000000",
+    "email": "janedoe112@gmail.com"
+  }
+]

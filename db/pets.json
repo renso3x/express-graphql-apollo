@@ -1,0 +1,90 @@
+[
+  {
+    "id": 0,
+    "name": "Frieda",
+    "colour": "brown",
+    "age": 3,
+    "breed": 1,
+    "user": 1
+  },
+  {
+    "id": 1,
+    "name": "Gina",
+    "colour": "golden",
+    "age": 3,
+    "breed": 1,
+    "user": 1
+  },
+  {
+    "id": 2,
+    "name": "Collins",
+    "colour": "golden",
+    "age": 1,
+    "breed": 2,
+    "user": 1
+  },
+  {
+    "id": 3,
+    "name": "Melissa",
+    "colour": "black",
+    "age": 1,
+    "breed": 2,
+    "user": 1
+  },
+  {
+    "id": 4,
+    "name": "Jeanine",
+    "colour": "red",
+    "age": 1,
+    "breed": 2,
+    "user": 2
+  },
+  {
+    "id": 5,
+    "name": "Elvia",
+    "colour": "black",
+    "age": 3,
+    "breed": 1,
+    "user": 2
+  },
+  {
+    "id": 6,
+    "name": "Latisha",
+    "colour": "white",
+    "age": 3,
+    "breed": 1,
+    "user": 2
+  },
+  {
+    "id": 7,
+    "name": "Coleman",
+    "colour": "white",
+    "age": 3,
+    "breed": 1,
+    "user": 2
+  },
+  {
+    "id": 8,
+    "name": "Nichole",
+    "colour": "red",
+    "age": 2,
+    "breed": 2,
+    "user": 2
+  },
+  {
+    "id": 9,
+    "name": "Fran",
+    "colour": "white",
+    "age": 3,
+    "breed": 1,
+    "user": 1
+  },
+  {
+    "id": 10,
+    "name": "Leonor",
+    "colour": "brown",
+    "age": 2,
+    "breed": 1,
+    "user": 2
+  }
+]
