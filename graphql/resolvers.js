@@ -13,6 +13,7 @@ function addPets(pet) {
 }
 
 function getMyPet(id) {
+  console.log(id);
   return myPets
     .filter(pet => pet.id == id)
     .map(resp => {
@@ -21,6 +22,16 @@ function getMyPet(id) {
         breed: getBreed(resp.breed)
       };
     })[0];
+}
+
+function updateMyPet(payload) {
+  myPets = myPets.map(pet => {
+    if (pet.id == payload.id) {
+      return Object.assign({}, pet, payload);
+    }
+    return pet;
+  });
+  return myPets;
 }
 
 function getMyPets(userId) {
@@ -59,6 +70,14 @@ module.exports = {
         success: true,
         message: "Successfully saved!",
         pet: getMyPet(newPet.id)
+      };
+    },
+    updatePet: (_, payload) => {
+      updateMyPet(payload);
+      return {
+        success: true,
+        message: "Successfully updated pet!",
+        pet: getMyPet(payload.id)
       };
     }
   }

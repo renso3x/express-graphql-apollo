@@ -15,12 +15,26 @@ const typeDefs = gql`
       breed: ID!
       owner: ID!
     ): AddPetsResponse!
+    updatePet(
+      id: ID!
+      name: String
+      colour: String
+      age: Int
+      breed: ID!
+      owner: ID!
+    ): UpdatePetResponse!
   }
 
   type AddPetsResponse {
     success: Boolean
     message: String
     pet: Pet!
+  }
+
+  type UpdatePetResponse {
+    success: Boolean
+    message: String
+    pet: Pet
   }
 
   type Pet {
