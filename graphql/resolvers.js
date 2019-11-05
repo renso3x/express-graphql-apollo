@@ -9,11 +9,18 @@ function getBreed(id) {
 }
 
 function addPets(pet) {
-  const payload = {
-    id: myPets.length + 1,
-    ...pet
-  };
-  return myPets.push(payload);
+  return myPets.push(pet);
+}
+
+function getMyPet(id) {
+  return myPets
+    .filter(pet => pet.id == id)
+    .map(resp => {
+      return {
+        ...resp,
+        breed: getBreed(resp.breed)
+      };
+    })[0];
 }
 
 function getMyPets(userId) {
@@ -38,23 +45,20 @@ module.exports = {
       return getMyPets(userId);
     },
     myPet: (_, { id }) => {
-      return myPets
-        .filter(pet => pet.id == id)
-        .map(resp => {
-          return {
-            ...resp,
-            breed: getBreed(resp.breed)
-          };
-        })[0];
+      return getMyPet(id);
     }
   },
   Mutation: {
     createPet: (_, payload) => {
-      addPets(payload);
+      const newPet = {
+        id: myPets.length + 1,
+        ...payload
+      };
+      addPets(newPet);
       return {
         success: true,
         message: "Successfully saved!",
-        pets: getMyPets(payload.userId)
+        pet: getMyPet(newPet.id)
       };
     }
   }

@@ -1,5 +1,5 @@
-const { gql } = require("apollo-server");
-// The GraphQL schema in string form
+const { gql } = require("apollo-server-express");
+
 const typeDefs = gql`
   type Query {
     owners: [Owner]
@@ -20,7 +20,7 @@ const typeDefs = gql`
   type AddPetsResponse {
     success: Boolean
     message: String
-    pets: [Pet]
+    pet: Pet!
   }
 
   type Pet {
