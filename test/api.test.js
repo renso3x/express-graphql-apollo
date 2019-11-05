@@ -22,7 +22,7 @@ describe("GraphQL", () => {
       });
   });
 
-  it("List Owners", done => {
+  it("List of Owners", done => {
     request
       .post("/graphql")
       .send({
@@ -48,6 +48,28 @@ describe("GraphQL", () => {
       .expect(200)
       .end((err, res) => {
         const pet = res.body.data.createPet;
+        if (err) return done(err);
+        expect(pet).to.have.property("success");
+        expect(pet).to.have.property("message");
+        expect(pet).to.have.property("pet");
+        done();
+      });
+  });
+
+  it("Update a pet", done => {
+    request
+      .post("/graphql")
+      .send({
+        query: `mutation{ updatePet( id: 2
+          name:"Bae",
+          age: 5,
+          colour: "green"
+          breed: 2
+          owner: 1) { success message pet { name breed { name } }	} }`
+      })
+      .expect(200)
+      .end((err, res) => {
+        const pet = res.body.data.updatePet;
         if (err) return done(err);
         expect(pet).to.have.property("success");
         expect(pet).to.have.property("message");
