@@ -6,7 +6,7 @@ var winston = require("./config/winston");
 
 const typeDefs = require("./graphql/schema");
 const resolvers = require("./graphql/resolvers");
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
@@ -28,5 +28,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen({ port: PORT }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+  console.log(
+    `🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`
+  )
 );
