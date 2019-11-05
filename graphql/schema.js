@@ -1,19 +1,35 @@
-const { gql } = require('apollo-server');
+const { gql } = require("apollo-server");
 // The GraphQL schema in string form
 const typeDefs = gql`
   type Query {
     owners: [Owner]
-    myPets(id: ID!): [Pets]
+    myPets(userId: ID!): [Pet]
+    myPet(id: ID!): Pet
   }
 
   type Mutation {
-    getOwners: AddPetsResponse!
+    createPet(
+      name: String
+      colour: String
+      age: Int
+      breed: ID!
+      owner: ID!
+    ): AddPetsResponse!
   }
 
   type AddPetsResponse {
     success: Boolean
     message: String
-    pets: Pets
+    pets: [Pet]
+  }
+
+  type Pet {
+    id: ID!
+    name: String
+    colour: String
+    age: Int
+    breed: Animal
+    owner: Owner
   }
 
   type Owner {
@@ -22,13 +38,6 @@ const typeDefs = gql`
     address: String
     phone: String
     email: String
-  }
-
-  type Pets {
-    id: ID!
-    name: String
-    colour: String
-    age: Int
   }
 
   type Animal {
