@@ -21,7 +21,8 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "mocha test/*.test.js"
   },
   "keywords": [],
