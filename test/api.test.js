@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 const sinon = require('sinon');
 const request = require('request');
 const chai = require('chai');
@@ -17,27 +19,20 @@ describe('GraphQL', () => {
   });
 
   it.only('Retrieve an Owner and their Pets', done => {
-    this.get.yields(
-      null,
-      api.all.success.res,
-      JSON.stringify(schedules.all.success.body)
-    );
+    const obj = api.myPets.success;
+    const query =
+      '{myPets(userId: 2) { id name breed { name } owner { name} }}';
 
-    // request
-    //   .post('/graphql')
-    //   .send({
-    //     query: '{myPets(userId: 2) { id name breed { name } owner { name} }}'
-    //   })
-    //   .expect(200)
-    //   .end((err, res) => {
-    //     const myPet = res.body.data.myPets[0];
-    //     if (err) return done(err);
-    //     expect(myPet).to.have.property('id');
-    //     expect(myPet).to.have.property('name');
-    //     expect(myPet).to.have.property('breed');
-    //     expect(myPet).to.have.property('owner');
-    //     done();
-    //   });
+    this.post.yields(null, obj.res, JSON.stringify(obj.body));
+
+    request.post(query, (err, res, body) => {
+      res.statusCode.should.equal(200);
+      res.headers['content-type'].should.contain('application/json');
+      body = JSON.parse(body);
+      body.status.should.eql('success');
+      body.myPets[0].should.include.keys('id', 'name', 'breed', 'owner');
+      done();
+    });
   });
 
   // it('List of Owners', done => {

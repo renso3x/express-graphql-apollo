@@ -1,5 +1,5 @@
 {
-  "all": {
+  "myPets": {
     "success": {
       "res": {
         "statusCode": 200,
@@ -9,39 +9,19 @@
       },
       "body": {
         "status": "success",
-        "data": [
+        "myPets": [
           {
             "id": 1,
-            "start": 0,
-            "duration": 15,
-            "title": "Excercise"
-          },
-          {
-            "id": 2,
-            "start": 25,
-            "duration": 30,
-            "title": "Travel to work"
-          },
-          {
-            "id": 3,
-            "start": 30,
-            "duration": 30,
-            "title": "Plan day"
+            "name": "Manly",
+            "breed": {
+              "name": "Dog"
+            },
+            "owner": {
+              "name": "Romeo"
+            }
           }
         ]
       }
-    }
-  },
-  "noAuthenticated": {
-    "res": {
-      "statusCode": 500,
-      "headers": {
-        "content-type": "application/json"
-      }
-    },
-    "body": {
-      "status": "error",
-      "message": "Not Authenticated"
     }
   },
   "add": {
