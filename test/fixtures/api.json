@@ -1,0 +1,101 @@
+{
+  "myPets": {
+    "success": {
+      "res": {
+        "statusCode": 200,
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "body": {
+        "status": "success",
+        "myPets": [
+          {
+            "id": 1,
+            "name": "Manly",
+            "breed": {
+              "name": "Dog"
+            },
+            "owner": {
+              "name": "Romeo"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "owners": {
+    "success": {
+      "res": {
+        "statusCode": 200,
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "body": {
+        "status": "success",
+        "owners": [
+          {
+            "id": 1,
+            "name": "John Doe",
+            "address": "Manila, Philippines",
+            "phone": "0921-59331122",
+            "email": "john.doe3@gmail.com"
+          }
+        ]
+      }
+    }
+  },
+  "createPet": {
+    "success": {
+      "res": {
+        "statusCode": 200,
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "body": {
+        "status": "success",
+        "message": "Successfully saved!",
+        "pet": {
+          "id": 1,
+          "name": "Manly",
+          "colour": "brown",
+          "age": 5,
+          "breed": {
+            "name": "Dog"
+          },
+          "owner": {
+            "name": "John Doe"
+          }
+        }
+      }
+    }
+  },
+  "updatePet": {
+    "success": {
+      "res": {
+        "statusCode": 200,
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "body": {
+        "status": "success",
+        "message": "Successfully saved!",
+        "pet": {
+          "id": 1,
+          "name": "Bae",
+          "colour": "green",
+          "age": 5,
+          "breed": {
+            "name": "Dog"
+          },
+          "owner": {
+            "name": "John Doe"
+          }
+        }
+      }
+    }
+  }
+}

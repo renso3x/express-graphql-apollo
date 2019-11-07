@@ -1,6 +1,6 @@
-const owners = require("../db/users.json");
-const animals = require("../db/animals.json");
-const pets = require("../db/pets.json");
+const owners = require('../db/users.json');
+const animals = require('../db/animals.json');
+const pets = require('../db/pets.json');
 
 let myPets = pets;
 
@@ -68,7 +68,7 @@ module.exports = {
       addPets(newPet);
       return {
         success: true,
-        message: "Successfully saved!",
+        message: 'Successfully saved!',
         pet: getMyPet(newPet.id)
       };
     },
@@ -76,7 +76,7 @@ module.exports = {
       updateMyPet(payload);
       return {
         success: true,
-        message: "Successfully updated pet!",
+        message: 'Successfully updated pet!',
         pet: getMyPet(payload.id)
       };
     }
