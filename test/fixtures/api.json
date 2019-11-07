@@ -24,7 +24,7 @@
       }
     }
   },
-  "add": {
+  "owners": {
     "success": {
       "res": {
         "statusCode": 200,
@@ -34,30 +34,19 @@
       },
       "body": {
         "status": "success",
-        "data": [
+        "owners": [
           {
-            "start": 60,
-            "duration": 15,
-            "title": "Lunch Time",
-            "userId": 1
+            "id": 1,
+            "name": "John Doe",
+            "address": "Manila, Philippines",
+            "phone": "0921-59331122",
+            "email": "john.doe3@gmail.com"
           }
         ]
       }
-    },
-    "failure": {
-      "res": {
-        "statusCode": 400,
-        "headers": {
-          "content-type": "application/json"
-        }
-      },
-      "body": {
-        "status": "error",
-        "message": "Please create in between 8AM - 5PM"
-      }
     }
   },
-  "update": {
+  "createPet": {
     "success": {
       "res": {
         "statusCode": 200,
@@ -67,43 +56,23 @@
       },
       "body": {
         "status": "success",
-        "data": [
-          {
-            "id": 4,
-            "start": 90,
-            "duration": 30,
-            "title": "Eat breafast",
-            "userId": 1
+        "message": "Successfully saved!",
+        "pet": {
+          "id": 1,
+          "name": "Manly",
+          "colour": "brown",
+          "age": 5,
+          "breed": {
+            "name": "Dog"
+          },
+          "owner": {
+            "name": "John Doe"
           }
-        ]
-      }
-    },
-    "notFound": {
-      "res": {
-        "statusCode": 500,
-        "headers": {
-          "content-type": "application/json"
         }
-      },
-      "body": {
-        "status": "error",
-        "message": "Schedule does not exist"
-      }
-    },
-    "failure": {
-      "res": {
-        "statusCode": 404,
-        "headers": {
-          "content-type": "application/json"
-        }
-      },
-      "body": {
-        "status": "error",
-        "message": "That schedule does not exist."
       }
     }
   },
-  "delete": {
+  "updatePet": {
     "success": {
       "res": {
         "statusCode": 200,
@@ -113,34 +82,19 @@
       },
       "body": {
         "status": "success",
-        "data": {
-          "sucess": true,
-          "message": "You have successfully deleted."
+        "message": "Successfully saved!",
+        "pet": {
+          "id": 1,
+          "name": "Bae",
+          "colour": "green",
+          "age": 5,
+          "breed": {
+            "name": "Dog"
+          },
+          "owner": {
+            "name": "John Doe"
+          }
         }
-      }
-    },
-    "notFound": {
-      "res": {
-        "statusCode": 500,
-        "headers": {
-          "content-type": "application/json"
-        }
-      },
-      "body": {
-        "status": "error",
-        "message": "Sorry, unable to find scedule."
-      }
-    },
-    "failure": {
-      "res": {
-        "statusCode": 404,
-        "headers": {
-          "content-type": "application/json"
-        }
-      },
-      "body": {
-        "status": "error",
-        "message": "Sorry, unable to find scedule."
       }
     }
   }
